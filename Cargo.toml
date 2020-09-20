@@ -1,0 +1,29 @@
+[package]
+name = "k8s-csi"
+version = "0.1.0"
+license = "Apache-2.0"
+authors = ["kflansburg <kevin.flansburg@gmail.com>"]
+categories = ["api-bindings"]
+description = "Bindings for Kubernetes CSI"
+edition = "2018"
+keywords = ["client", "kubernetes", "k8s", "csi"]
+repository = "https://github.com/kflansburg/k8s-csi"
+documentation = "https://docs.rs/crate/k8s-csi"
+readme = "README.md"
+
+[dependencies]
+tonic = { version = "0.2", features = ['tls'] }
+prost = "0.6"
+prost-types = "0.6"
+
+[build-dependencies]
+prost-build = "0.6"
+
+[build-dependencies.tonic-build]
+version = "0.2"
+default-features = false
+features = ["prost", "transport"]
+
+[dev-dependencies]
+tokio = { version = "0.2", features = ['macros', 'net'] }
+tower = "0.3"
