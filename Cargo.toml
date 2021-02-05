@@ -1,6 +1,6 @@
 [package]
 name = "k8s-csi"
-version = "0.2.0"
+version = "0.3.0"
 license = "Apache-2.0"
 authors = ["kflansburg <kevin.flansburg@gmail.com>"]
 categories = ["api-bindings"]
@@ -12,18 +12,18 @@ documentation = "https://docs.rs/crate/k8s-csi"
 readme = "README.md"
 
 [dependencies]
-tonic = { version = "0.3", features = ['tls'] }
-prost = "0.6"
-prost-types = "0.6"
+tonic = { version = "0.4", features = ['tls'] }
+prost = "0.7"
+prost-types = "0.7"
 
 [build-dependencies]
-prost-build = "0.6"
+prost-build = "0.7"
 
 [build-dependencies.tonic-build]
-version = "0.2"
+version = "0.4"
 default-features = false
 features = ["prost", "transport"]
 
 [dev-dependencies]
-tokio = { version = "0.2", features = ['macros', 'net'] }
-tower = "0.3"
+tokio = { version = "1.0", features = ['macros', 'net'] }
+tower = "0.4.2"
